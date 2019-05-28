@@ -50,7 +50,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip fabric git tmux ssh-agent ruby osx docker vagrant ansible terraform kubectl)
+plugins=(pip fabric git tmux ssh-agent ruby osx docker vagrant ansible terraform kubectl kube-ps1 aws)
 
 # User configuration
 
@@ -90,5 +90,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+if [ -e /usr/local/opt/kube-ps1/share/kube-ps1.sh ]
+then
+  KUBE_PS1_SYMBOL_ENABLE=false
+  KUBE_PS1_CTX_COLOR='105'
+  KUBE_PS1_NS_COLOR='32'
+  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  RPROMPT='$(kube_ps1)%{$reset_color%}%'
+fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Alias K8s
+alias kx="kubectx"
+alias kn="kubens"
+
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+#[[ -f /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+#[[ -f /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+#[[ -f /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/freddy/SNCF/sources/k8s/node_modules/tabtab/.completions/slss.zsh
