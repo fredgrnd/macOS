@@ -39,6 +39,46 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" autoload Plug if needed
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+" Plugins
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'raimondi/delimitmate'
+Plug 'yggdroot/indentline'
+Plug 'ap/vim-css-color'
+Plug 'leafgarland/typescript-vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'dense-analysis/ale'
+Plug 'palantir/tslint'
+Plug 'quramy/tsuquyomi'
+
+" Themes
+Plug 'nlknguyen/papercolor-theme'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
