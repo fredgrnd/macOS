@@ -129,7 +129,6 @@ if [ -f '/Users/freddy/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/freddy/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freddy/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-export HOMEBREW_GITHUB_API_TOKEN=b58d149fe53d4967bc333b94345a33382ae764de
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #export PATH="/usr/local/opt/helm@2/bin:$PATH"
