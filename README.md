@@ -8,7 +8,7 @@ My macOS config files
 
 ## Configure vim
 
-### Install pathogen
+### Install Pathogen
 
 ```bash
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -26,6 +26,7 @@ filetype plugin indent on
 ### Install Terraform package
 
 ```bash
+:q
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/bundle/vim-terraform
 ```
 
@@ -34,4 +35,11 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/bundle/vim-terraf
 ```bash
 cd ~/.vim/bundle && \
 git clone https://github.com/tpope/vim-sensible.git
+```
+
+### Install Fugitive package
+
+```bash
+cd ~/.vim/bundle && \
+git clone git@github.com:tpope/vim-fugitive.git
 ```
