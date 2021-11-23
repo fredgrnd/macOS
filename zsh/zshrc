@@ -52,7 +52,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip git ssh-agent osx docker terraform kubectl kube-ps1)
+plugins=(pip git ssh-agent macos docker terraform kubectl kube-ps1)
 
 # User configuration
 
@@ -106,10 +106,11 @@ alias kx="kubectx"
 alias kn="kubens"
 
 # Alias Gitlab Server
-alias gitlab="tmux new-window -n \"Gitlab Factory\" \"ssh gitlab-server\""
+alias gitlab="tmux new-window -n \"Gitlab Factory\" \"ssh gitlab\""
 
 autoload -U compinit && compinit
 zmodload -i zsh/complist
+source /usr/local/etc/bash_completion.d/az
 
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
